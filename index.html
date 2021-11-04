@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.4/dist/tf.min.js"></script>
+  </head>
+
+  <style>
+    body {
+      height: 100vh;
+      background: #111;
+      text-align: center;
+    }
+    canvas {
+      border: 2px solid skyblue;
+      width: 400px;
+      height: 400px;
+    }
+  </style>
+  <body>
+    <canvas id="canvas" width="400px" height="400px"></canvas>
+  </body>
+  <script>
+    function randomGaussian() {
+      var u = 0,
+        v = 0;
+      while (u === 0) u = Math.random(); //Converting [0,1) to (0,1)
+      while (v === 0) v = Math.random();
+      return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+    }
+  </script>
+  <script src="./ia/neuralNetWork.js"></script>
+  <script src="./ia/utils.js"></script>
+  <script src="./bird.js"></script>
+  <script src="./game.js"></script>
+</html>
